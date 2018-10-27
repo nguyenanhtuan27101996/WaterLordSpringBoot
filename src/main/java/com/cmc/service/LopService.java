@@ -5,6 +5,9 @@ package com.cmc.service;
 
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+
 import com.cmc.entity.Lop;
 
 
@@ -35,5 +38,6 @@ public interface LopService {
         
         Lop findLopByID(String maLop);
         
+        List<Lop> filterLopByName(String tenLop);  
         
 }

@@ -6,6 +6,8 @@ package com.cmc.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -39,8 +41,9 @@ public class LopController {
         private KhoaService khoaService;
         @Autowired
         private KhoaHocService khoaHocService;
+        
         @GetMapping("/lop")
-        public String index(ModelMap modelMap) {
+        public String index(ModelMap modelMap,Pageable pageable) {
                 List<Lop> listLop = lopService.getListAllLop();
                 List<HeDT> listHeDT = heDTService.getListAllHeDT();
                 List<Khoa> listKhoa = khoaService.getListAllKhoa();
@@ -107,5 +110,23 @@ public class LopController {
         	return "" + isUpdated;
         }
         
-        
+        @PostMapping("/lop/filter")
+        @ResponseBody
+        public String filterLop(@RequestParam String tenLop) {
+        	List<Lop> listFilterLopByName = lopService.filterLopByName(tenLop);
+        	StringBuilder stringBuilder = new StringBuilder();
+        	for (Lop lop : listFilterLopByName) {
+        		stringBuilder.append("<tr>");
+        		stringBuilder.append("<td id='p-malop'>" + lop.getMaLop() + "</td>");
+        		stringBuilder.append("<td id='p-tenlop'>" + lop.getTenLop() + "</td>");
+        		stringBuilder.append("<td id='p-mahedt'>" + lop.getHeDT().getMaHeDT() + "</td>");
+        		stringBuilder.append("<td id='p-makhoa'>" + lop.getKhoa().getMaKhoa() + "</td>");
+        		stringBuilder.append("<td id='p-makhoahoc'>" + lop.getKhoaHoc().getMaKhoaHoc() + "</td>");
+        		stringBuilder.append("<td><button class='btn btn-warning btn-update'>Cập nhật</button></td>");
+        		stringBuilder.append("<td><button class='btn btn-danger btn-delete'>Xóa</button></td>");
+            	stringBuilder.append("</tr>");
+			}
+        	return stringBuilder.toString();
+        }
+          
 }

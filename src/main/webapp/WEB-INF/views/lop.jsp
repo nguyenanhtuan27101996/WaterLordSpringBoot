@@ -7,6 +7,9 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" 
+integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" 
+crossorigin="anonymous">
 <title>Lớp</title>
 </head>
 <body>
@@ -39,8 +42,9 @@
                 <div class="">
                     <div class="pull-left">
                         <form class="navbar-form" action="#">
-                            <input type="text" class="form-control" placeholder="Search">
-                            <button type="button" class="btn btn-primary">Filter by name</button>
+                        	<i class="fas fa-filter"></i>&nbsp;&nbsp;&nbsp;
+                            <input type="text" id="text-filter-tenlop" class="form-control" placeholder="Lọc theo tên lớp">
+                            <!-- <button type="button" id="btn-filter-by-name" class="btn btn-primary">Filter by name</button> -->
                         </form>
                     </div>
                 </div>
@@ -52,7 +56,7 @@
             </div>
             <!--Table-->
             <div>
-                <table class="table table-bordered">
+                <table id="table-lop" class="table table-bordered">
                     <thead>
                         <tr>
 							<th>Mã lớp</th>

@@ -9,6 +9,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter.DEFAULT;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -78,7 +80,12 @@ public class LopServiceImpl implements LopService{
 		@Override
 		public Lop findLopByID(String maLop) {
 			return lopRepository.getOne(maLop);
+			
+			
 		}
 
-        
+		@Override
+		public List<Lop> filterLopByName(String tenLop) {
+			return lopRepository.findByTenLopContaining(tenLop);
+		}      
 }

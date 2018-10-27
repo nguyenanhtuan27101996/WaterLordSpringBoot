@@ -16,6 +16,10 @@ import com.cmc.entity.Lop;
  * @modifieddate Oct 26, 2018
  * @content ...
  */
+
 @Repository
 public interface LopRepository extends JpaRepository<Lop, String>{
+	List<Lop> findByTenLopContaining(String tenLop);
+	
+	
 }

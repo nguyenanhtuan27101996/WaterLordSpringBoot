@@ -1,3 +1,4 @@
+//NATuan3
 $(document).ready(function(){
 	$("body").on("click",".btn-delete",function(){
 		var maLop = $(this).closest("tr").find("#p-malop").text();
@@ -127,5 +128,21 @@ $(document).ready(function(){
 				alert("Tên lớp không được để trống !");
 			}	
 		});	
+	});
+	
+	$("#text-filter-tenlop").keyup(function(){
+		var self = $(this);
+		var tenLop = $(this).val();
+		$.ajax({
+			url : "/lop/filter",
+			type : "POST",
+			data : {
+				tenLop: tenLop
+			},
+			success : function(value) {
+				self.closest("body").find("#content-lop").empty();
+				self.closest("body").find("#content-lop").append(value);
+			}
+		});
 	});
 });
