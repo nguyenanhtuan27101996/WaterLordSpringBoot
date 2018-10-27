@@ -33,4 +33,7 @@ public interface LopService {
         
         boolean updateLop(Lop lop);
         
+        Lop findLopByID(String maLop);
+        
+        
 }

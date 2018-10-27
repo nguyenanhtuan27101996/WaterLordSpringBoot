@@ -27,5 +27,9 @@ public class KhoaHocServiceImpl implements KhoaHocService {
         public List<KhoaHoc> getListAllKhoaHoc() {
                 return khoaHocRepository.findAll();
         }
+		@Override
+		public KhoaHoc findKhoaHocByID(String maKhoaHoc) {
+			return khoaHocRepository.getOne(maKhoaHoc);
+		}
 
 }

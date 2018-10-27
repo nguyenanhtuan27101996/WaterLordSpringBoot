@@ -5,6 +5,8 @@ package com.cmc.service.serviceimpl;
 
 import java.util.List;
 
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter.DEFAULT;
+
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -73,4 +75,10 @@ public class LopServiceImpl implements LopService{
                 return isSuccess;
         }
 
+		@Override
+		public Lop findLopByID(String maLop) {
+			return lopRepository.getOne(maLop);
+		}
+
+        
 }

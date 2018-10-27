@@ -15,4 +15,6 @@ import com.cmc.entity.KhoaHoc;
  */
 public interface KhoaHocService {
         List<KhoaHoc> getListAllKhoaHoc();
+        
+        KhoaHoc findKhoaHocByID(String maKhoaHoc);
 }

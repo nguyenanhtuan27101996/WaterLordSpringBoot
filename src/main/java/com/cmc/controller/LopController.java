@@ -51,7 +51,7 @@ public class LopController {
                 modelMap.addAttribute("listKhoa",listKhoa);
                 modelMap.addAttribute("listKhoaHoc", listKhoaHoc);
                 
-                return "index";
+                return "lop";
         }
         
         @PostMapping("/lop/delete")
@@ -59,6 +59,52 @@ public class LopController {
         public String deleteLop(@RequestParam String maLop) {
                 boolean isDeleted = lopService.deleteLop(maLop);
                 return "" +isDeleted;
+        }
+        
+        @PostMapping("/lop/insert")
+        @ResponseBody
+        public String insertLop(@RequestParam String maLop, @RequestParam String tenLop,
+        		@RequestParam String maHeDT, @RequestParam String maKhoa, @RequestParam String maKhoaHoc) {
+        	Lop lop = new Lop();
+        	
+        	lop.setMaLop(maLop);
+        	lop.setTenLop(tenLop);
+        	
+        	HeDT heDT = heDTService.findHeDTByID(maHeDT);
+        	lop.setHeDT(heDT);
+        	
+        	Khoa khoa = khoaService.findKhoaByID(maKhoa);
+        	lop.setKhoa(khoa);
+        	
+        	KhoaHoc khoaHoc = khoaHocService.findKhoaHocByID(maKhoaHoc);
+        	lop.setKhoaHoc(khoaHoc);
+        	
+        	boolean isInserted = lopService.insertLop(lop);
+        	
+        	return "" + isInserted;
+        }
+        
+        @PostMapping("/lop/update")
+        @ResponseBody
+        public String updateLop(@RequestParam String maLop, @RequestParam String tenLop,
+        		@RequestParam String maHeDT, @RequestParam String maKhoa, @RequestParam String maKhoaHoc) {
+        	Lop lop = new Lop();
+        	
+        	lop.setMaLop(maLop);
+        	lop.setTenLop(tenLop);
+        	
+        	HeDT heDT = heDTService.findHeDTByID(maHeDT);
+        	lop.setHeDT(heDT);
+        	
+        	Khoa khoa = khoaService.findKhoaByID(maKhoa);
+        	lop.setKhoa(khoa);
+        	
+        	KhoaHoc khoaHoc = khoaHocService.findKhoaHocByID(maKhoaHoc);
+        	lop.setKhoaHoc(khoaHoc);
+        	
+        	boolean isUpdated = lopService.updateLop(lop);
+        	
+        	return "" + isUpdated;
         }
         
         

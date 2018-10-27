@@ -28,6 +28,11 @@ public class KhoaServiceImpl implements KhoaService{
         public List<Khoa> getListAllKhoa() {
                 return khoaRepository.findAll();
         }
+
+		@Override
+		public Khoa findKhoaByID(String maKhoa) {
+			return khoaRepository.getOne(maKhoa);
+		}
         
         
 }

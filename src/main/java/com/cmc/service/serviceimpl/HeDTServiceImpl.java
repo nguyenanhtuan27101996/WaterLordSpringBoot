@@ -27,5 +27,9 @@ public class HeDTServiceImpl implements HeDTService{
         public List<HeDT> getListAllHeDT() {
                 return heDTRepository.findAll();
         }
+		@Override
+		public HeDT findHeDTByID(String maHeDT) {
+			return heDTRepository.getOne(maHeDT);
+		}
 
 }

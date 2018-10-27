@@ -16,4 +16,6 @@ import com.cmc.entity.Khoa;
 public interface KhoaService {
 
         List<Khoa> getListAllKhoa();
+        
+        Khoa findKhoaByID(String maKhoa);
 }

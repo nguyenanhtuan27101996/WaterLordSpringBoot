@@ -15,4 +15,6 @@ import com.cmc.entity.HeDT;
  */
 public interface HeDTService {
         List<HeDT> getListAllHeDT();
+        
+        HeDT findHeDTByID(String maHeDT);
 }
