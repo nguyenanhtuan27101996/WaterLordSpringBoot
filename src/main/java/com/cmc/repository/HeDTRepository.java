@@ -3,7 +3,12 @@
  */
 package com.cmc.repository;
 
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+
+import com.cmc.entity.HeDT;
 
 /**
  * @author User
@@ -12,6 +17,6 @@ import org.springframework.stereotype.Repository;
  * @content ...
  */
 @Repository
-public interface HeDTRepository{
-
+public interface HeDTRepository extends JpaRepository<HeDT, String>{
+	List<HeDT>findAll();
 }

@@ -9,8 +9,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Document</title>
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
+        <link rel="stylesheet" href="../css/style.css">
     </head>
 
     <body>
@@ -37,7 +37,7 @@
                     <a href="#">Hệ đào tạo</a>
                 </div>
             </div>
-
+            <!--main content-->
             <div class="col-lg-10">
                 <div>
                     <div class="">
@@ -50,12 +50,33 @@
                     </div>
                     <div class="">
                         <div class="pull-right" style="margin-top:10px">
-                            <button class="btn btn-success" type="button">Add new student</button>
+                            <button id="btn-data-input" class="btn btn-success" type="button">Add new record</button>
                         </div>
                     </div>
                 </div>
+                <!--data entry form-->
+                <div id="data-entry-div">
+                    <form id="data-entry-form">
+                        <label>
+                          <p class="label-txt">NHẬP MÃ HỆ ĐÀO TẠO</p>
+                          <input type="text" class="input">
+                          <div class="line-box">
+                            <div class="line"></div>
+                          </div>
+                        </label>
+                        <label>
+                          <p class="label-txt">NHẬP TÊN HỆ ĐÀO TẠO</p>
+                          <input type="text" class="input">
+                          <div class="line-box">
+                            <div class="line"></div>
+                          </div>
+                        </label>
+                        <button type="submit">submit</button>
+                      </form>
+                </div>
+                
                 <!--Table-->
-                <div>
+                <div id="table-div">
                     <table class="table table-bordered">
                         <thead>
                             <tr>
@@ -67,56 +88,14 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>John</td>
-                                <td>Doe</td>
-                                <td>john@example.com</td>
-                                <td>abc</td>
-                                <td>cdf</td>
-                            </tr>
-                            <tr>
-                                <td>John</td>
-                                <td>Doe</td>
-                                <td>john@example.com</td>
-                                <td>abc</td>
-                                <td>cdf</td>
-                            </tr>
-                            <tr>
-                                <td>John</td>
-                                <td>Doe</td>
-                                <td>john@example.com</td>
-                                <td>abc</td>
-                                <td>cdf</td>
-                            </tr>
-                            <tr>
-                                <td>John</td>
-                                <td>Doe</td>
-                                <td>john@example.com</td>
-                                <td>abc</td>
-                                <td>cdf</td>
-                            </tr>
-                            <tr>
-                                <td>John</td>
-                                <td>Doe</td>
-                                <td>john@example.com</td>
-                                <td>abc</td>
-                                <td>cdf</td>
-                            </tr>
-
-                            <tr>
-                                <td>Mary</td>
-                                <td>Moe</td>
-                                <td>mary@example.com</td>
-                                <td>abc</td>
-                                <td>cdf</td>
-                            </tr>
-                            <tr>
-                                <td>July</td>
-                                <td>Dooley</td>
-                                <td>july@example.com</td>
-                                <td>abc</td>
-                                <td>cdf</td>
-                            </tr>
+                        <c:forEach var="hedt" items="${listHDT}">
+    					<tr>
+    						<td id="p-accountid">${hedt.getMaHeDT() }</td>
+    						<td id="p-fullname"}>${hedt.getTenHeDT() }</td>
+    						<td><button class="btn btn-warning btn-update">Update</button></td>
+    						<td><button class="btn btn-danger btn-delete">Delete</button></td>
+    					</tr>
+    				</c:forEach>
                         </tbody>
                     </table>
                 </div>
@@ -137,7 +116,9 @@
             
         </footer>
     </body>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../js/sha256.min.js"></script>
+    <script src="../js/js.js"></script>
 
-    <script src="js/sha256.min.js"></script>
 
     </html>
