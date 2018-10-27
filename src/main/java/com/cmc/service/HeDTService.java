@@ -27,4 +27,27 @@ public interface HeDTService {
 	 * @return
 	 */
 	public List<HeDT> getAllData();
+	/**
+	 * Create by: Thanh Dao 
+	 * Create date: Oct 27, 2018
+	 * Modifier: Thanh Dao 
+	 * Modified date: Oct 27, 2018
+	 * Description: insert new record into database
+	 * Version 1.0
+	 * @param hdt: HeDT object
+	 * @return bool result- true id success
+	 */
+	public boolean insertData(HeDT hdt);
+	
+	/**
+	 * Create by: Thanh Dao 
+	 * Create date: Oct 27, 2018
+	 * Modifier: Thanh Dao 
+	 * Modified date: Oct 27, 2018
+	 * Description: delete record in database
+	 * Version 1.0
+	 * @param hdt: HeDT object
+	 * @return
+	 */
+	public boolean deleteData(HeDT hdt);
 }	

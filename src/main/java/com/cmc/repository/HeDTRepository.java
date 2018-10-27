@@ -19,4 +19,6 @@ import com.cmc.entity.HeDT;
 @Repository
 public interface HeDTRepository extends JpaRepository<HeDT, String>{
 	List<HeDT>findAll();
+	HeDT save(HeDT hdt);
+	void deleteById(String id);
 }

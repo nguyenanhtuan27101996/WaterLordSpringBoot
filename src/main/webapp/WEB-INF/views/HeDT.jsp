@@ -80,18 +80,17 @@
                     <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th>Col1</th>
-                                <th>Col2</th>
-                                <th>Col3</th>
-                                <th>Col4</th>
-                                <th>Col5</th>
+                                <th>Mã hệ đào tạo</th>
+                                <th>Tên hệ đào tạo</th>
+                                <th></th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
                         <c:forEach var="hedt" items="${listHDT}">
     					<tr>
-    						<td id="p-accountid">${hedt.getMaHeDT() }</td>
-    						<td id="p-fullname"}>${hedt.getTenHeDT() }</td>
+    						<td id="p-mahedt">${hedt.getMaHeDT() }</td>
+    						<td id="p-tenhedt"}>${hedt.getTenHeDT() }</td>
     						<td><button class="btn btn-warning btn-update">Update</button></td>
     						<td><button class="btn btn-danger btn-delete">Delete</button></td>
     					</tr>
@@ -118,7 +117,7 @@
     </body>
     <script src="../js/jquery-3.3.1.min.js"></script>
     <script src="../js/sha256.min.js"></script>
-    <script src="../js/js.js"></script>
+    <script src="../js/hedt.js"></script>
 
 
     </html>
