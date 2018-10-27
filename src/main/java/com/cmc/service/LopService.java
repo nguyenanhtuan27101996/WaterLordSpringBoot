@@ -5,9 +5,6 @@ package com.cmc.service;
 
 import java.util.List;
 
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-
 import com.cmc.entity.Lop;
 
 
@@ -30,14 +27,51 @@ public interface LopService {
          */
         List<Lop> getListAllLop();
         
+        /**
+         * @author NATuan3
+         * @modifidate Oct 27, 2018
+         * @modifi
+         * @desciption delete an object Lop
+         * @return boolean
+         */
         boolean deleteLop(String maLop);
         
+        
+        /**
+         * @author NATuan3
+         * @modifidate Oct 27, 2018
+         * @modifi
+         * @desciption insert an object Lop
+         * @return boolean
+         */
         boolean insertLop(Lop lop);
         
+        /**
+         * @author NATuan3
+         * @modifidate Oct 27, 2018
+         * @modifi
+         * @desciption update an object Lop
+         * @return boolean
+         */
         boolean updateLop(Lop lop);
         
+        /**
+         * @author NATuan3
+         * @modifidate Oct 27, 2018
+         * @modifi
+         * @desciption return an object Lop found by maLop
+         * @return Lop
+         */
         Lop findLopByID(String maLop);
         
+        
+        /**
+         * @author NATuan3
+         * @modifidate Oct 27, 2018
+         * @modifi
+         * @desciption return a list of Lop that name containing tenLop
+         * @return list
+         */
         List<Lop> filterLopByName(String tenLop);  
         
 }

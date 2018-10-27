@@ -13,6 +13,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 /**
  * @author NATuan3
  * @creatdate Oct 26, 2018
@@ -32,6 +34,7 @@ public class KhoaHoc {
         
         @OneToMany
         @JoinColumn(name="MaKhoaHoc")
+        @JsonManagedReference
         private Set<Lop> setLops;
 
         public KhoaHoc(String maKhoaHoc, String tenKhoaHoc, Set<Lop> setLops) {

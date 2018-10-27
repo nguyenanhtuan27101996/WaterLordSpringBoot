@@ -13,6 +13,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 /**
  * @author User
  * @creatdate Oct 26, 2018
@@ -32,6 +34,7 @@ public class HeDT {
 
         @OneToMany(cascade=CascadeType.ALL)
         @JoinColumn(name="MaHeDT")
+        @JsonManagedReference
         private Set<Lop> setLops;
         
         public HeDT(String maHeDT, String tenHeDT) {

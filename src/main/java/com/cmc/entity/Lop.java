@@ -7,11 +7,16 @@ import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 /**
  * @author User
@@ -32,18 +37,22 @@ public class Lop {
         
         @OneToOne
         @JoinColumn(name="MaKhoa")
+        @JsonBackReference
         private Khoa khoa;
         
         @OneToOne
+        @JsonBackReference
         @JoinColumn(name="MaHeDT")
         private HeDT heDT;
         
         @OneToOne
+        @JsonBackReference
         @JoinColumn(name="MaKhoaHoc")
         private KhoaHoc khoaHoc;
         
         @OneToMany
         @JoinColumn(name="MaLop")
+        @JsonManagedReference
         private Set<SinhVien> setSinhViens;
         
         public Lop(String maLop, String tenLop, Khoa khoa, HeDT heDT, KhoaHoc khoaHoc) {

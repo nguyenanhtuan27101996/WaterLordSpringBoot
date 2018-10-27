@@ -38,9 +38,12 @@ public class LopServiceImpl implements LopService{
         @Override
         public boolean deleteLop(String maLop) {
                 boolean isSuccess = false;
+                
+                //find an object Lop that have maLop = maLop
                 Lop lop = lopRepository.getOne(maLop);
                 
                 try {
+                		//delete object Lop found
                         lopRepository.delete(lop);
                         isSuccess = true;
                 } catch (Exception e) {
@@ -54,7 +57,9 @@ public class LopServiceImpl implements LopService{
         public boolean insertLop(Lop lop) {
                 boolean isSuccess = false;
                 lop.setMaLop(lop.getMaLop());
+                //save object love into database
                 Lop insertedLop = lopRepository.save(lop);
+                //check if insertedLop null
                 if (insertedLop != null) {
                         isSuccess = true;
                 } else {
@@ -67,7 +72,9 @@ public class LopServiceImpl implements LopService{
         @Override
         public boolean updateLop(Lop lop) {
                 boolean isSuccess = false;
+                //save object love into database
                 Lop updatedLop = lopRepository.save(lop);
+                //check if insertedLop null
                 if (updatedLop != null){
                         isSuccess = true;
                 } else {

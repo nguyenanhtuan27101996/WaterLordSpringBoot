@@ -3,7 +3,7 @@ $(document).ready(function(){
 	$("body").on("click",".btn-delete",function(){
 		var maLop = $(this).closest("tr").find("#p-malop").text();
 		var self = $(this);
-		var choice = confirm("Are you want to delete this account ? ");
+		var choice = confirm("Bạn có chắc muốn xóa lớp này ? ");
 		if (choice == true){
 			$.ajax({
 				url : "/lop/delete",
