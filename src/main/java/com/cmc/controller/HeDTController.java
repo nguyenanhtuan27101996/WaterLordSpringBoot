@@ -41,8 +41,10 @@ public class HeDTController {
 	
 	@PostMapping("/hedaotao/insert")
 	@ResponseBody
-	public String insertHeDT(@RequestParam String mahedt, @RequestParam String tenhedt) {
+	public String insertHeDT(String mahedt, String tenhedt) {
 		HeDT hdt = new HeDT();
+//		mahedt, tenhedt
+		//hedt.setmahedt(hedt.getmahedt())
 		hdt.setMaHeDT(mahedt);
 		hdt.setTenHeDT(tenhedt);
 		boolean isSuccess = service.insertData(hdt);

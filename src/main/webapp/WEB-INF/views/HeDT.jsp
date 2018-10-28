@@ -59,19 +59,19 @@
                     <form id="data-entry-form">
                         <label>
                           <p class="label-txt">NHẬP MÃ HỆ ĐÀO TẠO</p>
-                          <input type="text" class="input">
+                          <input id="text-mahedt"type="text" class="input">
                           <div class="line-box">
                             <div class="line"></div>
                           </div>
                         </label>
                         <label>
                           <p class="label-txt">NHẬP TÊN HỆ ĐÀO TẠO</p>
-                          <input type="text" class="input">
+                          <input id="text-tenhedt" type="text" class="input">
                           <div class="line-box">
                             <div class="line"></div>
                           </div>
                         </label>
-                        <button type="submit">submit</button>
+                        <button id="btn-insert" type="button">Insert</button>
                       </form>
                 </div>
                 
@@ -86,7 +86,7 @@
                                 <th></th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="content-hedt">
                         <c:forEach var="hedt" items="${listHDT}">
     					<tr>
     						<td id="p-mahedt">${hedt.getMaHeDT() }</td>

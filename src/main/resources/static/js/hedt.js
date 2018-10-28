@@ -2,7 +2,7 @@ $(document).ready(function(){
 	// 
     $("#btn-data-input").click(function(){
         $("#data-entry-div").css("background-color", "green");
-        alert("Clicked");
+        //alert("Clicked");
     });
     // delete record function
     $("body").on("click",".btn-delete",function(){
@@ -29,5 +29,33 @@ $(document).ready(function(){
 		}	
 	});
     // insert new record function
-    
+    $("#btn-insert").click(function(){
+    	var pagehdt = $(this);
+		var mahedt = $("#data-entry-form").find("#text-mahedt").val();
+		var tenhedt = $("#data-entry-form").find("#text-tenhedt").val();
+		$.ajax({
+			url : "/hedaotao/insert",
+			type : "POST",
+			data : {
+				mahedt: mahedt,
+				tenhedt: tenhedt,
+			},
+			success : function(value) {
+				if ("true"==value.toString()) {
+					alert("Insert successfully");
+					
+					var htmlElement = "<tr>";
+					htmlElement += "<td id='p-mahedt'>"+mahedt+"</td>";
+					htmlElement += "<td id='p-tenhedt'>"+tenhedt+"</td>";
+					htmlElement += "<td><button class='btn btn-warning btn-update'>Update</button></td></td>";
+					htmlElement += "<td><button class='btn btn-danger btn-delete'>Delete</button></td>";
+					htmlElement += "</tr>";
+					pagehdt.closest("body").find("#content-hedt").append(htmlElement);
+					
+				} else {
+					alert("Insert error");
+				}
+			}
+		});
+	});
 });

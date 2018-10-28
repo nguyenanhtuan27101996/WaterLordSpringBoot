@@ -22,7 +22,7 @@ import com.cmc.service.HeDTService;
  * Description: Version 1.0
  */
 @Service
-@Transactional
+//@Transactional
 public class HeDTServiceIplm implements HeDTService {
 	@Autowired
 	HeDTRepository repo;
