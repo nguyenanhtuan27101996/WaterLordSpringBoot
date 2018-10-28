@@ -26,4 +26,5 @@ public interface SinhVienService {
   boolean insert(SinhVien s);
   boolean update(SinhVien s);
   boolean delete(String s);
+  List<SinhVien> search(String s);
 }

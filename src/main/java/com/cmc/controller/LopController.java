@@ -45,7 +45,7 @@ public class LopController {
         @GetMapping("/lop")
         public String index(ModelMap modelMap,Pageable pageable) {
                 List<Lop> listLop = lopService.getListAllLop();
-                List<HeDT> listHeDT = heDTService.getListAllHeDT();
+                List<HeDT> listHeDT = heDTService.getAllData();
                 List<Khoa> listKhoa = khoaService.getListAllKhoa();
                 List<KhoaHoc> listKhoaHoc = khoaHocService.getListAllKhoaHoc();
                 
