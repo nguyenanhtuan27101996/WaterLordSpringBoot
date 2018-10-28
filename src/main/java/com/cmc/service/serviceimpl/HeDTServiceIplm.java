@@ -83,6 +83,13 @@ public class HeDTServiceIplm implements HeDTService {
 			return false;
 		}
 	}
+	/* (non-Javadoc)
+	 * @see com.cmc.service.HeDTService#findHeDTByID(java.lang.String)
+	 */
+	@Override
+	public HeDT findHeDTByID(String maHeDT) {
+		return repo.getOne(maHeDT);
+	}
 	
 
 }

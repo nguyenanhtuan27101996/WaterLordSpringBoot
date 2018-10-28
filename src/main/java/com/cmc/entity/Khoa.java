@@ -12,6 +12,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 /**
  * @author User
  * @creatdate Oct 26, 2018
@@ -33,6 +35,7 @@ public class Khoa {
         private String dienThoai;
         @OneToMany
         @JoinColumn(name="MaKhoa")
+        @JsonManagedReference
         private Set<Lop> setLops;
         
         public Khoa(String maKhoa, String tenKhoa, String diaChi, String dienThoai) {

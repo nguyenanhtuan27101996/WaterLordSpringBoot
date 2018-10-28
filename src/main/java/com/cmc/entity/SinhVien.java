@@ -12,6 +12,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 /**
  * @author User
  * @creatdate Oct 26, 2018
@@ -36,6 +38,7 @@ public class SinhVien {
         
         @OneToOne
         @JoinColumn(name="MaLop")
+        @JsonBackReference
         private Lop lop;
 
         public SinhVien(String maSV, String tenSV, boolean gioiTinh, String ngaySinh, String queQuan, Lop lop) {
