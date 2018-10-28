@@ -4,6 +4,7 @@ $(document).ready(function(){
 		var maLop = $(this).closest("tr").find("#p-malop").text();
 		var self = $(this);
 		var choice = confirm("Bạn có chắc muốn xóa lớp này ? ");
+		
 		if (choice == true){
 			$.ajax({
 				url : "/lop/delete",
@@ -145,4 +146,8 @@ $(document).ready(function(){
 			}
 		});
 	});
+	$("#btn-dangky").click(function(){
+		alert("abc");
+	});
+	
 });
