@@ -62,4 +62,18 @@ public interface HeDTService {
 	 * @return: true if success
 	 */
 	public boolean updateData(HeDT hdt);
+	
+	/**
+	 * Create by: Tuan Nguyen Anh
+	 * Create date: Oct 25, 2018
+	 * Modifier: Thanh Dao 
+	 * Modified date: Oct 27, 2018
+	 * Description: 
+	 * Version 1.0
+	 * @param maHeDT
+	 * @return
+	 */
+	HeDT findHeDTByID(String maHeDT);
 }	
+
+        

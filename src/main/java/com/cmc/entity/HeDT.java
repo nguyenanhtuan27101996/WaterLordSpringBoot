@@ -13,6 +13,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 /**
 	 * Create by: Thanh Dao 
 	 * Create date: Oct 28, 2018
@@ -30,15 +32,16 @@ public class HeDT {
     @Column(name="TenHeDT")
     private String tenHeDT;
 
-    @OneToMany(cascade=CascadeType.ALL)
-    @JoinColumn(name="MaHeDT")
-    private Set<Lop> setLops;
-    
-    public HeDT(String maHeDT, String tenHeDT) {
-            super();
-            this.maHeDT = maHeDT;
-            this.tenHeDT = tenHeDT;
-    }
+        @OneToMany(cascade=CascadeType.ALL)
+        @JoinColumn(name="MaHeDT")
+        @JsonManagedReference
+        private Set<Lop> setLops;
+        
+        public HeDT(String maHeDT, String tenHeDT) {
+                super();
+                this.maHeDT = maHeDT;
+                this.tenHeDT = tenHeDT;
+        }
 
     public HeDT() {
             
