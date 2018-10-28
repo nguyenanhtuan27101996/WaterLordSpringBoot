@@ -9,8 +9,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Document</title>
-        <link rel="stylesheet" href="../css/bootstrap.min.css">
-        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/style.css">
     </head>
 
     <body>
@@ -110,14 +110,43 @@
             </div>
             <div class="col-lg-1">
             </div>
+            
+            <div class="modal" id="modalUpdateHeDT" tabindex="-1"
+    		role="dialog" aria-labelledby="exampleModalCenterTitle"
+    		aria-hidden="true">
+    		<div class="modal-dialog modal-dialog-centered" role="document">
+    			<div class="modal-content">
+    				<div class="modal-header">
+    					<h4 class="modal-title" id="exampleModalLongTitle">Update Account</h4>
+    					<button type="button" class="close" data-dismiss="modal"
+    						aria-label="Close">
+    						<span aria-hidden="true">&times;</span>
+    					</button>
+    				</div>
+    				<div class="modal-body">
+    					<input type="text" id="text-mahedt" class="form-control" disabled="disabled">
+    					<br/>
+    					<input type="text" id="text-tenhedt" class="form-control">
+    					<br/>
+    				</div>
+    				<div class="modal-footer">
+    					<button type="button" class="btn btn-secondary"
+    						data-dismiss="modal">Close</button>
+    					<button id="btn-save-update" type="button" class="btn btn-primary">Save changes</button>
+    				</div>
+    			</div>
+    		</div>
+    		
+    	</div>
         </div>
         <footer>
             
         </footer>
     </body>
-    <script src="../js/jquery-3.3.1.min.js"></script>
-    <script src="../js/sha256.min.js"></script>
-    <script src="../js/hedt.js"></script>
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/sha256.min.js"></script>
+    <script src="/js/hedt.js"></script>
 
 
     </html>

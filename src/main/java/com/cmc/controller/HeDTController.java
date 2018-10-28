@@ -59,4 +59,14 @@ public class HeDTController {
 		boolean isSuccess = service.deleteData(hdt);
 		return ""+isSuccess;
 	}
+	
+	@PostMapping("/hedaotao/update")
+	@ResponseBody
+	public String updateHeDT(String mahedt, String tenhedt) {
+		HeDT hdt = new HeDT();
+		hdt.setMaHeDT(mahedt);
+		hdt.setTenHeDT(tenhedt);
+		boolean isSuccess = service.updateData(hdt);
+		return ""+isSuccess;
+	}
 }

@@ -70,6 +70,19 @@ public class HeDTServiceIplm implements HeDTService {
 			return false;
 		}
 	}
+	/* (non-Javadoc)
+	 * @see com.cmc.service.HeDTService#updateData(com.cmc.entity.HeDT)
+	 */
+	@Override
+	public boolean updateData(HeDT hdt) {
+		try {
+			repo.save(hdt);
+			return true;
+		} catch (Exception e) {
+			log.error(e.getMessage());
+			return false;
+		}
+	}
 	
 
 }

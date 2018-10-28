@@ -47,7 +47,19 @@ public interface HeDTService {
 	 * Description: delete record in database
 	 * Version 1.0
 	 * @param hdt: HeDT object
-	 * @return
+	 * @return true if success
 	 */
 	public boolean deleteData(HeDT hdt);
+	
+	/**
+	 * Create by: Thanh Dao 
+	 * Create date: Oct 27, 2018
+	 * Modifier: Thanh Dao 
+	 * Modified date: Oct 27, 2018
+	 * Description: update data in table HeDT
+	 * Version 1.0
+	 * @param hdt: HeDT object 
+	 * @return: true if success
+	 */
+	public boolean updateData(HeDT hdt);
 }	

@@ -58,4 +58,38 @@ $(document).ready(function(){
 			}
 		});
 	});
+    // modify exist record in db
+    $("body").on("click",".btn-update",function(){
+		var pagehdt = $(this);
+		var mahedt = pagehdt.closest("tr").find("#p-mahedt").text();
+		var tenhedt = pagehdt.closest("tr").find("#p-tenhedt").text();
+		
+    	$("#modalUpdateHeDT").modal("show");
+		$("#modalUpdateHeDT").find("#text-mahedt").val(mahedt);
+		$("#modalUpdateHeDT").find("#text-tenhedt").val(tenhedt);
+		
+		$("#btn-save-update").click(function(){
+			var mahedt = $("#modalUpdateHeDT").find("#text-mahedt").val();
+			var tenhedt = $("#modalUpdateHeDT").find("#text-tenhedt").val();
+				$.ajax({
+					url : "/hedaotao/update",
+					type : "POST",
+					data : {
+						mahedt: mahedt,
+						tenhedt: tenhedt
+					},
+					success : function(value) {
+						if ("true" == value.toString()) {
+							$("#modalUpdateHeDT").modal("hide");
+							alert("Update successfully");
+							pagehdt.closest("tr").find("#p-mahedt").text(mahedt);
+							pagehdt.closest("tr").find("#p-tenhedt").text(tenhedt);						
+						} else {
+							$("#modalUpdateHeDT").modal("hide");
+							alert("Update error");
+						}
+					}
+				});
+		});	
+	});
 });
