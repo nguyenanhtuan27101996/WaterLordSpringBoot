@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	// 
     $("#btn-data-input").click(function(){
-        $("#data-entry-div").css("background-color", "green");
+        $("#data-entry-div").css("display", "block");
         //alert("Clicked");
     });
     // delete record function
@@ -43,7 +43,7 @@ $(document).ready(function(){
 			success : function(value) {
 				if ("true"==value.toString()) {
 					alert("Insert successfully");
-					
+					$("#data-entry-div").css("display", "none");
 					var htmlElement = "<tr>";
 					htmlElement += "<td id='p-mahedt'>"+mahedt+"</td>";
 					htmlElement += "<td id='p-tenhedt'>"+tenhedt+"</td>";

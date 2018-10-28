@@ -16,7 +16,7 @@
 }
 
 #data-entry-div{
-    display: block;
+    display: none;
 }
 form {
     width: 100%;
