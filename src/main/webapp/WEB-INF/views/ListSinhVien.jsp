@@ -43,10 +43,8 @@
 				<div>
 					<div class="">
 						<div class="pull-left">
-							<form class="navbar-form" action="${contextPath}/sinhvien/search" method="POST">
-								<input type="text" name="search" class="form-control" placeholder="Search">
-								<input type="submit" class="btn btn-primary" value="Search">
-							</form>
+								<input type="text" id="key" class="form-control" placeholder="Search">
+								<button  class="btn btn-primary search_btn">Search</button>
 						</div>
 					</div>
 					<div class="">
@@ -71,7 +69,7 @@
 								<th></th>
 							</tr>
 						</thead>
-						<tbody>
+						<tbody id="table_body">
 							<c:forEach items="${listSinhVien}" var="s">
 								<tr class="onRow">
 									<td>${s.maSV}</td>
@@ -407,6 +405,24 @@
 
 		});
 		//end delete sinhvien
+		//seach
+		$(document).on('keyup','.search_btn',
+		   function(event) {
+		var event = $(this);
+		var key = $("#key").val();
+		$.ajax({
+			url : "sinhvien/search",
+			type : "POST",
+			data : {
+				search: key
+			},
+			success : function(value) {
+				event.closest("body").find("#table_body").empty();
+				event.closest("body").find("#table_body").append(value);
+			}
+		});
+	});
+		//end search
 		//validate data
 		function validate()
 	                {
