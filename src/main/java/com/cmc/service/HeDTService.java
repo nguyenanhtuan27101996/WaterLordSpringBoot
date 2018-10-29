@@ -68,12 +68,24 @@ public interface HeDTService {
 	 * Create date: Oct 25, 2018
 	 * Modifier: Thanh Dao 
 	 * Modified date: Oct 27, 2018
-	 * Description: 
+	 * Description: find HeDT record in database by id
 	 * Version 1.0
 	 * @param maHeDT
 	 * @return
 	 */
 	HeDT findHeDTByID(String maHeDT);
+	
+	/**
+	 * Create by: Thanh Dao
+	 * Create date: Oct 29, 2018
+	 * Modifier: Thanh Dao
+	 * Modified date: Oct 29, 2018
+	 * Description: search name of HeDT
+	 * Version 1.0
+	 * @param name: name of HeDT object
+	 * @return
+	 */
+	List<HeDT> filterByName(String name);
 }	
 
         

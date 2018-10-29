@@ -31,9 +31,9 @@ crossorigin="anonymous">
         <!--Filter area and function button-->
         <div class="col-lg-2">
             <div class="vertical-menu">
-                <a href="#">Sinh viên</a>
-                <a href="#" class="active">Lớp</a>
-                <a href="#">Hệ đào tạo</a>
+                <a href="/sinhvien">Sinh viên</a>
+                <a href="/lop" class="active">Lớp</a>
+                <a href="/hedaotao">Hệ đào tạo</a>
             </div>
         </div>
 
