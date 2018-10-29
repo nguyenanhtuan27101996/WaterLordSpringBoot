@@ -4,6 +4,23 @@ $(document).ready(function(){
         $("#data-entry-div").css("display", "block");
         //alert("Clicked");
     });
+    // filter function
+    //$("btn-search").click(function(){
+    $("#text-search").keyup(function(){
+    	var hedtpage = $(this);
+    	var tenhedt = $("#form-search").find("#text-search").val();
+		$.ajax({
+			url : "/hedaotao/filter",
+			type : "POST",
+			data : {
+				tenhedt: tenhedt
+			},
+			success : function(value) {
+				hedtpage.closest("body").find("#content-hedt").empty();
+				hedtpage.closest("body").find("#content-hedt").append(value);
+			}
+		});
+    });
     // delete record function
     $("body").on("click",".btn-delete",function(){
 		var mahedt = $(this).closest("tr").find("#p-mahedt").text();

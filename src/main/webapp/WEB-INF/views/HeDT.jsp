@@ -42,9 +42,9 @@
                 <div>
                     <div class="">
                         <div class="pull-left">
-                            <form class="navbar-form" action="#">
-                                <input type="text" class="form-control" placeholder="Search">
-                                <button type="button" class="btn btn-primary">Filter by name</button>
+                            <form id="form-search" class="navbar-form" action="#">
+                                <input id="text-search" type="text" class="form-control" placeholder="Search">
+                                <!--<button id="btn-search" type="button" class="btn btn-primary">Filter by name</button>-->
                             </form>
                         </div>
                     </div>

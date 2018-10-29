@@ -90,6 +90,18 @@ public class HeDTServiceIplm implements HeDTService {
 	public HeDT findHeDTByID(String maHeDT) {
 		return repo.getOne(maHeDT);
 	}
-	
-
+	/* (non-Javadoc)
+	 * @see com.cmc.service.HeDTService#filterByName(java.lang.String)
+	 */
+	@Override
+	public List<HeDT> filterByName(String name) {
+		// TODO Auto-generated method stub
+		try {
+			List<HeDT> list = (List<HeDT>)repo.findByTenHeDTContaining(name);
+			return list;
+		}catch (Exception e) {
+			log.error(e.getMessage());
+			return null;
+		}
+	}
 }
