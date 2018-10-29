@@ -32,9 +32,9 @@
             <!--Filter area and function button-->
             <div class="col-lg-2">
                 <div class="vertical-menu">
-                    <a href="#" class="active">Sinh viên</a>
-                    <a href="#">Lớp</a>
-                    <a href="#">Hệ đào tạo</a>
+                    <a href="/sinhvien">Sinh viên</a>
+                    <a href="/lop">Lớp</a>
+                    <a href="/hedaotao" class="active">Hệ đào tạo</a>
                 </div>
             </div>
             <!--main content-->
@@ -98,7 +98,7 @@
                         </tbody>
                     </table>
                 </div>
-                <nav class="pull-right" aria-label="Page navigation example">
+                <!-- <nav class="pull-right" aria-label="Page navigation example">
                         <ul class="pagination">
                             <li class="page-item"><a class="page-link" href="#">Previous</a></li>
                             <li class="page-item"><a class="page-link" href="#">1</a></li>
@@ -106,7 +106,7 @@
                             <li class="page-item"><a class="page-link" href="#">3</a></li>
                             <li class="page-item"><a class="page-link" href="#">Next</a></li>
                         </ul>
-                    </nav>
+                    </nav> -->
             </div>
             <div class="col-lg-1">
             </div>

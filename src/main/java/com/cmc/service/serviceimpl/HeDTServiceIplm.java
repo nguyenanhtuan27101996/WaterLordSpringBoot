@@ -63,6 +63,7 @@ public class HeDTServiceIplm implements HeDTService {
 	public boolean deleteData(HeDT hdt) {
 		String id = hdt.getMaHeDT();
 		try {
+		        
 			repo.deleteById(id);
 			return true;
 		} catch (Exception e) {
