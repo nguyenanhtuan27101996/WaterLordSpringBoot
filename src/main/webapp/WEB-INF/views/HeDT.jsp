@@ -32,9 +32,9 @@
             <!--Filter area and function button-->
             <div class="col-lg-2">
                 <div class="vertical-menu">
-                    <a href="#" class="active">Sinh viên</a>
-                    <a href="#">Lớp</a>
-                    <a href="#">Hệ đào tạo</a>
+                    <a href="/sinhvien">Sinh viên</a>
+                    <a href="/lop">Lớp</a>
+                    <a href="/hedaotao" class="active">Hệ đào tạo</a>
                 </div>
             </div>
             <!--main content-->
