@@ -20,6 +20,11 @@ crossorigin="anonymous">
                 <div class="container-fluid">
                     <div class="navbar-header">
                         <a class="navbar-brand" href="#">HỆ THỐNG DU HỌC</a>
+                        <form style="display: none;" id="logoutForm" method="POST" action="/logout">
+						<input type="hidden" name="${_csrf.parameterName}"
+							value="${_csrf.token}" />
+					</form>
+					<a onclick="document.forms['logoutForm'].submit()">Logout</a>
                     </div>
 
                 </div>

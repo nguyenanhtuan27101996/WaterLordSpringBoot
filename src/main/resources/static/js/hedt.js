@@ -66,8 +66,8 @@ $(document).ready(function(){
 					var htmlElement = "<tr>";
 					htmlElement += "<td id='p-mahedt'>"+mahedt+"</td>";
 					htmlElement += "<td id='p-tenhedt'>"+tenhedt+"</td>";
-					htmlElement += "<td><button class='btn btn-warning btn-update'>Update</button></td></td>";
-					htmlElement += "<td><button class='btn btn-danger btn-delete'>Delete</button></td>";
+					htmlElement += "<td><button class='btn btn-warning btn-update'>Cập nhật</button></td></td>";
+					htmlElement += "<td><button class='btn btn-danger btn-delete'>Xóa</button></td>";
 					htmlElement += "</tr>";
 					pagehdt.closest("body").find("#content-hedt").append(htmlElement);
 					

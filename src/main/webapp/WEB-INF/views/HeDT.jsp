@@ -22,8 +22,12 @@
                         <div class="navbar-header">
                             <a class="navbar-brand" href="#">HỆ THỐNG DU HỌC</a>
                         </div>
-
-                    </div>
+					<form style="display: none;" id="logoutForm" method="POST" action="/logout">
+						<input type="hidden" name="${_csrf.parameterName}"
+							value="${_csrf.token}" />
+					</form>
+					<a onclick="document.forms['logoutForm'].submit()">Logout</a>
+				</div>
                 </nav>
             </div>
         </header>
@@ -50,7 +54,7 @@
                     </div>
                     <div class="">
                         <div class="pull-right" style="margin-top:10px">
-                            <button id="btn-data-input" class="btn btn-success" type="button">Add new record</button>
+                            <button id="btn-data-input" class="btn btn-success" type="button">Thêm hệ đào tạo</button>
                         </div>
                     </div>
                 </div>
@@ -92,8 +96,8 @@
     					<tr>
     						<td id="p-mahedt">${hedt.getMaHeDT() }</td>
     						<td id="p-tenhedt"}>${hedt.getTenHeDT() }</td>
-    						<td><button class="btn btn-warning btn-update">Update</button></td>
-    						<td><button class="btn btn-danger btn-delete">Delete</button></td>
+    						<td><button class="btn btn-warning btn-update">Cập nhật</button></td>
+    						<td><button class="btn btn-danger btn-delete">Xóa</button></td>
     					</tr>
     				</c:forEach>
                         </tbody>
@@ -118,7 +122,7 @@
     		<div class="modal-dialog modal-dialog-centered" role="document">
     			<div class="modal-content">
     				<div class="modal-header">
-    					<h4 class="modal-title" id="exampleModalLongTitle">Update Account</h4>
+    					<h4 class="modal-title" id="exampleModalLongTitle">Cập nhật hệ đào tạo</h4>
     					<button type="button" class="close" data-dismiss="modal"
     						aria-label="Close">
     						<span aria-hidden="true">&times;</span>

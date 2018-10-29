@@ -15,10 +15,16 @@ import com.cmc.entity.SinhVien;
 import com.cmc.service.serviceimpl.LopServiceImpl;
 import com.cmc.service.serviceimpl.SinhVienServiceImpl;
 
+
+
 /**
- * Create by: NV Tiep Create date:Oct 26, 2018 Modifier: NV Tiep Modified
- * date:Oct 26, 2018 Description:
- */
+* Create by: NVTiep
+* Create date:Oct 29, 2018
+* Modifier: NVTiep
+* Modified date:Oct 29, 2018
+* Description:
+* Version 1.0
+*/
 @Controller
 public class SinhVienController {
 	@Autowired
@@ -35,6 +41,22 @@ public class SinhVienController {
 		return "ListSinhVien";
 	}
 
+	
+	/**
+	* Create by: NVTiep
+	* Create date:Oct 29, 2018
+	* Modifier: NVTiep
+	* Modified date:Oct 29, 2018
+	* Description:
+	* Version 1.0
+	* @param masv
+	* @param tensv
+	* @param ngaysinh
+	* @param gioitinh
+	* @param quequan
+	* @param lop
+	* @return
+	*/
 	@PostMapping("/sinhvien/insert")
 	@ResponseBody
 	public String insertSinhVien(@RequestParam String masv, @RequestParam String tensv, @RequestParam String ngaysinh,
@@ -61,6 +83,22 @@ public class SinhVienController {
 
 	}
 
+	
+	/**
+	* Create by: NVTiep
+	* Create date:Oct 29, 2018
+	* Modifier: NVTiep
+	* Modified date:Oct 29, 2018
+	* Description:
+	* Version 1.0
+	* @param masv
+	* @param tensv
+	* @param ngaysinh
+	* @param gioitinh
+	* @param quequan
+	* @param lop
+	* @return
+	*/
 	@PostMapping("/sinhvien/update")
 	@ResponseBody
 	public String updateSinhVien(@RequestParam String masv, @RequestParam String tensv, @RequestParam String ngaysinh,
@@ -87,6 +125,17 @@ public class SinhVienController {
 
 	}
 
+	
+	/**
+	* Create by: NVTiep
+	* Create date:Oct 29, 2018
+	* Modifier: NVTiep
+	* Modified date:Oct 29, 2018
+	* Description:
+	* Version 1.0
+	* @param masv
+	* @return
+	*/
 	@PostMapping("/sinhvien/delete")
 	@ResponseBody
 	public String deleteSinhVien(@RequestParam String masv) {
@@ -98,14 +147,38 @@ public class SinhVienController {
 
 	}
 
+	
+	/**
+	* Create by: NVTiep
+	* Create date:Oct 29, 2018
+	* Modifier: NVTiep
+	* Modified date:Oct 29, 2018
+	* Description:
+	* Version 1.0
+	* @param model
+	* @param search
+	* @return
+	*/
 	@PostMapping("/sinhvien/search")
-	public String searchSinhVien(Model model,@RequestParam String search)
+	@ResponseBody
+	public String searchSinhVien(@RequestParam String search)
 		 {
         List<SinhVien> list=serviceSV.search(search);
-		List<Lop> listL = serviceL.getListAllLop();
-		model.addAttribute("listSinhVien", list);
-		model.addAttribute("listLop", listL);
-		return "ListSinhVien";
+		StringBuilder stringBuilder = new StringBuilder();
+    	for (SinhVien sv : list) {
+    		String gioiTinh=sv.isGioiTinh()==true?"Nam":"Nữ";
+    		stringBuilder.append("<tr>");
+    		stringBuilder.append("<td>" + sv.getMaSV() + "</td>");
+    		stringBuilder.append("<td>" + sv.getTenSV() + "</td>");
+    		stringBuilder.append("<td>" + sv.getNgaySinh() + "</td>");
+    		stringBuilder.append("<td>" + gioiTinh + "</td>");
+    		stringBuilder.append("<td>" + sv.getQueQuan() + "</td>");
+    		stringBuilder.append("<td>" + sv.getLop().getTenLop() + "</td>");
+    		stringBuilder.append("<td><button class='btn btn-warning edit_btn'>Cập nhật</button></td>");
+    		stringBuilder.append("<td><button class= 'btn btn-danger delete_btn '>Xóa</button></td>");
+        	stringBuilder.append("</tr>");
+		}
+    	return stringBuilder.toString();
 	}
 
 }
