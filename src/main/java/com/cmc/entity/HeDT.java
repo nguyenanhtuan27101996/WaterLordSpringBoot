@@ -32,7 +32,7 @@ public class HeDT {
     @Column(name="TenHeDT")
     private String tenHeDT;
 
-        @OneToMany(cascade=CascadeType.ALL)
+        @OneToMany(cascade=CascadeType.REMOVE)
         @JoinColumn(name="MaHeDT")
         @JsonManagedReference
         private Set<Lop> setLops;

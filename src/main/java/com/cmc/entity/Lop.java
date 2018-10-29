@@ -5,6 +5,7 @@ package com.cmc.entity;
 
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -50,7 +51,7 @@ public class Lop {
         @JoinColumn(name="MaKhoaHoc")
         private KhoaHoc khoaHoc;
         
-        @OneToMany
+        @OneToMany(cascade=CascadeType.REMOVE)
         @JoinColumn(name="MaLop")
         @JsonManagedReference
         private Set<SinhVien> setSinhViens;

@@ -174,8 +174,8 @@ public class SinhVienController {
     		stringBuilder.append("<td>" + gioiTinh + "</td>");
     		stringBuilder.append("<td>" + sv.getQueQuan() + "</td>");
     		stringBuilder.append("<td>" + sv.getLop().getTenLop() + "</td>");
-    		stringBuilder.append("<td><button class='btn btn-info edit_btn'>Edit</button></td>");
-    		stringBuilder.append("<td><button class= 'btn btn-info delete_btn '>Delete</button></td>");
+    		stringBuilder.append("<td><button class='btn btn-warning edit_btn'>Cập nhật</button></td>");
+    		stringBuilder.append("<td><button class= 'btn btn-danger delete_btn '>Xóa</button></td>");
         	stringBuilder.append("</tr>");
 		}
     	return stringBuilder.toString();
