@@ -21,4 +21,5 @@ public interface HeDTRepository extends JpaRepository<HeDT, String>{
 	List<HeDT>findAll();
 	HeDT save(HeDT hdt);
 	//void deleteById(String id);
+	List<HeDT> findByTenHeDTContaining(String name);
 }
