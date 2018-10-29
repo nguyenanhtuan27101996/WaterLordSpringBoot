@@ -2,10 +2,12 @@ $(document).ready(function(){
 	// 
     $("#btn-data-input").click(function(){
         $("#data-entry-div").css("display", "block");
+    });
+    $("#btn-cancel").click(function(){
+        $("#data-entry-div").css("display", "none");
         //alert("Clicked");
     });
     // filter function
-    //$("btn-search").click(function(){
     $("#text-search").keyup(function(){
     	var hedtpage = $(this);
     	var tenhedt = $("#form-search").find("#text-search").val();
